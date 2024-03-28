@@ -1,5 +1,5 @@
 section .data
-A dq 2.0
+A dd 2.0
 section .text
 bits 64
 default rel
@@ -27,14 +27,14 @@ saxpy_loop:
 	xorps xmm14, xmm14
 	
 	; A*X[i]
-	movsd xmm14, [rdx+r10*8]
-	vmulsd xmm15, xmm14, [A]
+	movss xmm14, [rdx+r10*4]
+	vmulss xmm15, xmm14, [A]
 	
 	; add Y[i]
-	addsd xmm15, [r8+r10*8]
+	addss xmm15, [r8+r10*4]
 
 	; store into Z[i]
-	movsd [r9+r10*8], xmm15
+	movss [r9+r10*4], xmm15
 
 	; move to next value
 	inc r10
