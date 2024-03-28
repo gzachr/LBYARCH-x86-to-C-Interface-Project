@@ -4,7 +4,7 @@
 extern void saxpy_x86_64(int, double*, double*, double*);
 
 int main() {
-	const int N = 1 << 15; // 2^n change the second operand depending on N
+	const int N = 1 << 20; // 2^n change the second operand depending on N
 	const size_t ARRAY_SIZE = N * sizeof(double); 
 
 	double *vectorX, *vectorY, *vectorZ;
@@ -30,6 +30,10 @@ int main() {
 	for (counter = 0; counter < 10; counter++) {
 		printf("Output %d: %lf\n", counter + 1, vectorZ[counter]);
 	}
+
+	free(vectorX);
+	free(vectorY);
+	free(vectorZ);
 
 	return 0;
 }
