@@ -27,7 +27,7 @@ saxpy_loop:
 	xorps xmm14, xmm14
 	
 	; A*X[i]
-	movsd xmm14, [rdx+r10*8];
+	movsd xmm14, [rdx+r10*8]
 	vmulsd xmm15, xmm14, [A]
 	
 	; add Y[i]
