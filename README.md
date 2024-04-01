@@ -1,4 +1,15 @@
 # MCO2-LBYARCH
+Created by Bawa, Francis I. and Gomez, Zachary R. (S14)
+
+## I. Intro
+The project makes use of a C program that calls two kernels (C and assembly) to perform the same process ( *Z[i] = AX[i] + Y[i]* ) wherein A is a single-precision float and vectors X, Y, and Z are also single-precision floats. A variable *N* determines the length ( 2<sup>N</sup> ) of vectors X, Y, and Z. The program then compares the average execution time of both kernels over 30 different runs per size of N and determines if the output of both kernels is correct by cross-checking.
+
+## II. Setup
+![image](https://github.com/gzachr/LBYARCH-x86-to-C-Interface-Project/assets/97268058/726c26e3-d2e5-4ecd-9352-a1facbca39e8)
+
+> Ensure that the command line path under the properties of asm file matches the location of the installed nasm.exe on the device for both debug and release mode.
+
+Vector size can be adjusted by editing `const int N = 1 << 20;` in main.c wherein the second integer denotes N in ( 2<sup>N</sup> ).
 
 ### Debug Version for N = 20
 ![Debug 20](https://github.com/gzachr/LBYARCH-x86-to-C-Interface-Project/assets/97230437/84b0a5f1-6157-4784-9d99-fd7ccaea4829)
