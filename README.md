@@ -10,7 +10,7 @@
 ![Debug 24](https://github.com/gzachr/LBYARCH-x86-to-C-Interface-Project/assets/97230437/b5f0537f-4365-41a9-8908-510c473afa16)
 
 ### Release Version for N = 24
-![Release 24](https://github.com/gzachr/LBYARCH-x86-to-C-Interface-Project/assets/97230437/166219fe-91dc-4c43-a4ff-cd1456704796)
+![Release 24](https://github.com/gzachr/LBYARCH-x86-to-C-Interface-Project/assets/97230437/bd48ca5e-216d-4c18-bad7-8ee1ace24103)
 
 ### N = 30 Error
 ![Error with 30](https://github.com/gzachr/LBYARCH-x86-to-C-Interface-Project/assets/97230437/2512a7f1-5627-466c-b3a8-b2ad467ec464)
