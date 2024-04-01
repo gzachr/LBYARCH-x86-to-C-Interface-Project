@@ -1,5 +1,4 @@
 section .data
-A dd 2.0 ; declare scalar value
 section .text
 bits 64
 default rel
@@ -14,6 +13,11 @@ saxpy_x86_64:
 	; rdx contains vectorX
 	; r8 contains vectorY
 	; r9 contains vectorZ
+
+	xorps xmm13, xmm13
+
+	; xmm13 contains scalar A
+	movss xmm13, [rbp+32]
 	
 	; setup counter
 	xor r10, r10
@@ -28,7 +32,7 @@ saxpy_loop:
 	
 	; A*X[i]
 	movss xmm14, [rdx+r10*4]
-	vmulss xmm15, xmm14, [A]
+	vmulss xmm15, xmm14, xmm13
 	
 	; add Y[i]
 	addss xmm15, [r8+r10*4]

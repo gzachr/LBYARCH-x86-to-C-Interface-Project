@@ -2,13 +2,13 @@
 #include <stdlib.h>
 #include <time.h>
 
-extern void saxpy_x86_64(int, float*, float*, float*);
+extern void saxpy_x86_64(int, float*, float*, float*, float);
 extern void saxpy_c(int n, float a, float* x, float* y, float* z);
 
 int main() {
-	const int N = 1 << 30; // 2^n change the second operand depending on N
+	const int N = 1 << 20; // 2^n change the second operand depending on N
 	const size_t ARRAY_SIZE = N * sizeof(double);
-	const float A = 2.0; //ensure value is same as asm declaration
+	const float A = 2.0;
 	clock_t begin, end;
 	double time_taken;
 	double elapsed_time = 0;
@@ -34,14 +34,15 @@ int main() {
 	}
 
 	// fill the cache so cache hit
-	//saxpy_x86_64(N, vectorX, vectorY, vectorZ1);
+	// saxpy_x86_64(N, vectorX, vectorY, vectorZ1, A);
+
 
 	int loop = 30;
 
 	// call x86-64 kernel
 	for (int time_counter = 0; time_counter < loop; time_counter++) {
 		begin = clock();
-		saxpy_x86_64(N, vectorX, vectorY, vectorZ1);
+		saxpy_x86_64(N, vectorX, vectorY, vectorZ1, A);
 		end = clock();
 		time_taken = ((double)(end - begin)) * 1e3 / CLOCKS_PER_SEC;
 		elapsed_time += time_taken;
@@ -61,7 +62,7 @@ int main() {
 	avg_time = 0;
 
 	// fill the cache so cache hit
-	//saxpy_c(N, A, vectorX, vectorY, vectorZ2);
+	// saxpy_c(N, A, vectorX, vectorY, vectorZ2);
 
 	for (int time_counter = 0; time_counter < loop; time_counter++) {
 		begin = clock();
