@@ -23,7 +23,7 @@
 
 ## Comparative Execution and Analysis of the Kernels
 
-The vector sizes (n) that were used for both versions of the kernel were: 20, 24, and 29. A size of N = 30 was attempted but it resulted in memory allocation failure because the machine could not support the large data size. As the size of N increases, it is apparent that the average time to finish the function for both kernels also increases thus indicating that they are directly proportional. 
+The vector sizes (N) that were used for both versions of the kernel were: 20, 24, and 29. A size of N = 30 was attempted but it resulted in memory allocation failure because the machine could not support the large data size. As the size of N increases, it is apparent that the average time to finish the function for both kernels also increases thus indicating that they are directly proportional. 
 
 For each size of N, the tests were run for both the Debug and Release versions. It is important to note that for all sizes of N, the release version is significantly faster than its debug counterpart. This is because the Debug version contains information in the compiled file used for easy debugging of the program. The Release version, on the other hand, has optimizations enabled that configure the program making it run faster (https://stackoverflow.com/questions/933739/what-is-the-difference-between-release-and-debug-modes-in-visual-studio). 
 
