@@ -129,6 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />
+    <ClCompile Include="saxpy_c.c" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="saxpy.asm">

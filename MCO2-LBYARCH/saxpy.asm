@@ -1,5 +1,5 @@
 section .data
-A dd 2.0
+A dd 2.0 ; declare scalar value
 section .text
 bits 64
 default rel
